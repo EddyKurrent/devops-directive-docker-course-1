@@ -12,7 +12,7 @@ build-multiarch:
 	# Requires having container registry to push to
 	# Here it uses https://hub.docker.com/r/sidpalas/multi-arch-test
 	docker buildx build \
-		--platform linux/amd64,linux/arm64,linux/arm/v7 \
+		--platform linux/amd64,linux/arm/v7 \
 		--secret id=secret.txt,src=local-secret.txt \
 		-t sidpalas/multi-arch-test:latest \
 		-f Dockerfile.sample \
